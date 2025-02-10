@@ -10,4 +10,6 @@ list.append("Third Node");
 
 list.append("Fourth Node");
 
+list.prepend("Node Zero");
+
 console.log(list);
