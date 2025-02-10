@@ -12,4 +12,6 @@ list.append("Fourth Node");
 
 list.prepend("Node Zero");
 
+console.log(list.size());
+
 console.log(list);
