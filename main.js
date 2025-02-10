@@ -14,4 +14,8 @@ list.prepend("Node Zero");
 
 console.log(list.size());
 
+console.log(list.getHead());
+
+console.log(list.getTail());
+
 console.log(list);

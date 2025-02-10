@@ -37,6 +37,18 @@ export class LinkedList {
     }
     return `Total: ${nodeCount}`;
   }
+
+  getHead() {
+    return this.head;
+  }
+
+  getTail() {
+    let currentNode = this.head;
+    while (currentNode.nextNode) {
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 }
 
 export class Node {
