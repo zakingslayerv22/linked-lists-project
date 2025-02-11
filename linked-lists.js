@@ -31,6 +31,12 @@ export class LinkedList {
   size() {
     let currentNode = this.head;
     let nodeCount = 1;
+
+    if (!currentNode) {
+      nodeCount = 0;
+      return nodeCount;
+    }
+
     while (currentNode.nextNode) {
       nodeCount += 1;
       currentNode = currentNode.nextNode;
@@ -52,7 +58,7 @@ export class LinkedList {
 
   getNodeAt(index) {
     const nodeSize = this.size();
-    if (index < 1) return `Node indexes start at 1.`;
+    if (index < 1) return 0;
     if (index > nodeSize)
       return `Total nodes are ${nodeSize}. Cannot search for index greater than ${nodeSize}.`;
 
