@@ -35,7 +35,7 @@ export class LinkedList {
       nodeCount += 1;
       currentNode = currentNode.nextNode;
     }
-    return `Total: ${nodeCount}`;
+    return nodeCount;
   }
 
   getHead() {
@@ -47,6 +47,23 @@ export class LinkedList {
     while (currentNode.nextNode) {
       currentNode = currentNode.nextNode;
     }
+    return currentNode;
+  }
+
+  getNodeAt(index) {
+    const nodeSize = this.size();
+    if (index < 1) return `Node indexes start at 1.`;
+    if (index > nodeSize)
+      return `Total nodes are ${nodeSize}. Cannot search for index greater than ${nodeSize}.`;
+
+    let currentNode = this.head;
+    let currentIndex = 1;
+
+    while (currentIndex !== index) {
+      currentNode = currentNode.nextNode;
+      currentIndex += 1;
+    }
+
     return currentNode;
   }
 }

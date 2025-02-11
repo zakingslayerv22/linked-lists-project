@@ -18,4 +18,6 @@ console.log(list.getHead());
 
 console.log(list.getTail());
 
+console.log(list.getNodeAt(3));
+
 console.log(list);
