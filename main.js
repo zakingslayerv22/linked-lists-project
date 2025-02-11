@@ -20,4 +20,10 @@ console.log(list.getTail());
 
 console.log(list.getNodeAt(3));
 
+console.log(list.pop());
+
 console.log(list);
+
+console.log(list.size());
+
+console.log(list.contains("Node Five"));
