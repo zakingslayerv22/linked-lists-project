@@ -72,6 +72,23 @@ export class LinkedList {
 
     return currentNode;
   }
+
+  pop() {
+    const nodeSize = this.size();
+
+    if (nodeSize === 0) return;
+
+    const lastNode = this.getNodeAt(nodeSize);
+
+    if (nodeSize === 1) {
+      this.head = null;
+      return lastNode;
+    }
+
+    const secondToLastNode = this.getNodeAt(nodeSize - 1);
+    secondToLastNode.nextNode = null;
+    return lastNode;
+  }
 }
 
 export class Node {
