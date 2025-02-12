@@ -32,6 +32,8 @@ console.log(list.toString());
 
 console.log(list.insertAt("Inserted Node", 2));
 
+console.log(list.removeAt(2));
+
 console.log(list);
 
 console.log(list.size());

@@ -120,6 +120,8 @@ export class LinkedList {
     const newNode = new Node();
     newNode.value = value;
 
+    if (index < 1) return;
+
     if (!this.head) {
       this.head = newNode;
       return this.head;
@@ -146,6 +148,31 @@ export class LinkedList {
     }
 
     return newNode;
+  }
+
+  removeAt(index) {
+    const listSize = this.size();
+    if (index < 1 || index > listSize) return;
+
+    let currentNode = this.getNodeAt(index);
+    let nextNode = currentNode.nextNode;
+
+    if (index === 1 && listSize === 1) {
+      this.head = null;
+      return currentNode;
+    }
+
+    if (index === 1) {
+      this.head = nextNode;
+      currentNode.nextNode = null;
+      return currentNode;
+    }
+
+    const previousNode = this.getNodeAt(index - 1);
+    previousNode.nextNode = nextNode;
+    currentNode.nextNode = null;
+
+    return currentNode;
   }
 }
 
