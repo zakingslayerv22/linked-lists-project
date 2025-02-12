@@ -100,6 +100,21 @@ export class LinkedList {
     }
     return false;
   }
+
+  toString() {
+    let currentNode = this.head;
+    let listSize = this.size();
+
+    let string = "";
+    while (listSize >= 1) {
+      string += `(${currentNode.value}) -> `;
+      currentNode = currentNode.nextNode;
+      listSize -= 1;
+    }
+    string += "null";
+
+    return string;
+  }
 }
 
 export class Node {
