@@ -115,6 +115,38 @@ export class LinkedList {
 
     return string;
   }
+
+  insertAt(value, index) {
+    const newNode = new Node();
+    newNode.value = value;
+
+    if (!this.head) {
+      this.head = newNode;
+      return this.head;
+    }
+
+    const listSize = this.size();
+
+    if (index === 1) {
+      let currentNode = this.head;
+      this.head = newNode;
+      newNode.nextNode = currentNode;
+      return newNode;
+    }
+
+    let currentNode = this.getNodeAt(index);
+    let previousNode = this.getNodeAt(index - 1);
+
+    if (index > listSize) {
+      const lastNode = this.getNodeAt(listSize);
+      lastNode.nextNode = newNode;
+    } else {
+      previousNode.nextNode = newNode;
+      newNode.nextNode = currentNode;
+    }
+
+    return newNode;
+  }
 }
 
 export class Node {
