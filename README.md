@@ -1,2 +1,3 @@
 # linked-lists-project
-A linked lists project!
+
+The Odin Project's Linked Lists project!
